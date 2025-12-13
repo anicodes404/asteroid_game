@@ -40,6 +40,7 @@ def main():
         screen.fill("black")
         # time.tick(60)
         
+        player.update(dt)
         player.draw(screen)
         pygame.display.flip()
         
