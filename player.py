@@ -1,10 +1,11 @@
 import pygame
-from circleshape import CircleShape
 from constants import *
 
 
-class Player(CircleShape): 
-    def __init__(self, x, y):
+class Player(pygame.sprite.Sprite): 
+    def __init__(self, x, y, *groups):
+        super().__init__(*groups)
+
         self.position = pygame.Vector2(x, y)
         self.rotation = 0
         self.radius = PLAYER_RADIUS
