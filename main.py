@@ -2,6 +2,8 @@ import pygame
 from constants import *
 from logger import log_state
 from player import Player
+from asteroid import Asteroid
+from asteroidfield import AsteroidField
 
 
 # Use an infinite while loop for the game loop. At each iteration, it should:
@@ -29,12 +31,15 @@ def main():
 
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
+    asteroids = pygame.sprite.Group()
 
     Player.containers = (updatable, drawable)
+    Asteroid.containers = (asteroids, updatable, drawable)
+    AsteroidField.containers = (updatable, )
 
     player = Player(x_center, y_center, updatable, drawable)
-
-
+    asteroid_field = AsteroidField()
+    
     while True: 
         log_state()
         dt = clock.tick(60) / 1000 
