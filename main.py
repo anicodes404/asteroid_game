@@ -1,9 +1,12 @@
 import pygame
+import sys
 from constants import *
 from logger import log_state
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from logger import log_event
+
 
 
 # Use an infinite while loop for the game loop. At each iteration, it should:
@@ -49,6 +52,12 @@ def main():
                 return 
             
         updatable.update(dt)
+
+        for a in asteroids: 
+            if a.collides_with(player):
+                    log_event("player_hit")
+                    print("Game over!")
+                    sys.exit()
         
         screen.fill("black")
         # time.tick(60)
