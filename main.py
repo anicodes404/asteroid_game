@@ -10,15 +10,6 @@ from shot import Shot
 
 
 
-# Use an infinite while loop for the game loop. At each iteration, it should:
-# Call log_state() – no arguments needed.
-# Use the screen's .fill method to fill the screen with a solid "black" color (you can literally just pass the string "black" to the method).
-# Use pygame's display.flip() method to refresh the screen. Be sure to call this last!
-
-
-
-
-
 def main():
     print("Starting Asteroids with pygame verison VERSION")
     print(f"Screen width: {SCREEN_WIDTH}")
